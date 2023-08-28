@@ -20,6 +20,8 @@ const userSlice = createSlice({
             state.email = payload.email
             state.id = payload.id
             state.token = payload.token
+        },
+        setLocalStorage(state, { payload }) {
             localStorage.setItem('CurrentUser', JSON.stringify(payload))
         },
         removeUser(state) {
@@ -29,6 +31,6 @@ const userSlice = createSlice({
     }
 })
 
-export const { setUser, removeUser } = userSlice.actions
+export const { setUser, removeUser, setLocalStorage } = userSlice.actions
 
 export default userSlice.reducer 
